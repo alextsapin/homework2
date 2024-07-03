@@ -3,15 +3,27 @@
 }
 
 .friendImageAndText {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .friendImageAndText img {
-
+    height: 48px;
 }
 
 .friendText {
-
+    min-width: 400px;
+    padding: 7px 0 0 27px;
+    color: black;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: url('./bg/left.png') no-repeat left center, 
+                url('./bg/right.png') no-repeat right center,
+                url('./bg/center.png') repeat-x center;
 }
 
 .friendText:after {
@@ -19,11 +31,19 @@
 }
 
 .friendName {
+    margin-top: 7px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.94px;
+    text-align: left;
 
 }
 
 .friendMessageText {
-
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .friendTime {

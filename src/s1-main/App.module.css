@@ -1,5 +1,6 @@
 .App {
     --header_height: 60px;
+    margin-top: 30px;
 }
 
 .hw {
@@ -7,5 +8,9 @@
 }
 
 .hwTitle {
-
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    text-align: left;
 }
