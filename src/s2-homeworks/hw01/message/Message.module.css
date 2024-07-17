@@ -1,7 +1,7 @@
 .message {
     margin-top: 40px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -56,6 +56,6 @@
     font-weight: 600;
     line-height: 12.19px;
     position: relative;
-    top: 5px;
-    right: 36px;
+    top: -10px;
+    right: 10px;
 }

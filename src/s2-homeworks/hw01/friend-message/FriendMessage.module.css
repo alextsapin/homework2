@@ -1,5 +1,8 @@
 .friendMessage {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .friendImageAndText {
@@ -47,5 +50,11 @@
 }
 
 .friendTime {
-
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-weight: 600;
+    position: relative;
+    top: -5px;
+    left: 7px;
 }
