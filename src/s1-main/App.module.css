@@ -4,10 +4,11 @@
 }
 
 .hw {
-
+    margin-top: 40px;
 }
 
 .hwTitle {
+    margin-top: 40px;
     font-family: 'Montserrat';
     font-size: 22px;
     font-weight: 600;
@@ -16,5 +17,11 @@
 }
 
 body {
+    font-family: 'Montserrat', 'sans-serif';
     padding-bottom: 70px;
+    box-sizing: border-box;
+}
+
+hr {
+    margin-top: 40px;
 }

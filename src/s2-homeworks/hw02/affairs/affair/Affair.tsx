@@ -21,7 +21,7 @@ function Affair(props: AffairPropsType) {
         <div id={'hw2-affair-' + props.affair._id} className={affairClass}>
             <div id={'hw2-name-' + props.affair._id} className={nameClass}>{props.affair.name}</div>
             <div id={'hw2-priority-' + props.affair._id} hidden>{props.affair.priority}</div>
-            <button id={'hw2-button-delete-' + props.affair._id} className={buttonClass} onClick={() => deleteCallback(props.affair._id)}>X</button>
+            <button id={'hw2-button-delete-' + props.affair._id} className={buttonClass} onClick={() => deleteCallback(props.affair._id)}>✖</button>
         </div>
     )
 }
