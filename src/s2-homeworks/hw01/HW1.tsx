@@ -35,7 +35,7 @@ export const message0: MessageType = {
     },
     message: {
         text: 'За кого болеешь на Евро-2024?', // можно менять
-        time: '22:00', // можно менять
+        time: '10:00', // можно менять
     },
 }
 
@@ -47,7 +47,7 @@ export const friendMessage0: MessageType = {
     },
     message: {
         text: 'За Германию и Хорватию.', // можно менять
-        time: '22:00', // можно менять
+        time: '10:22', // можно менять
     },
 }
 

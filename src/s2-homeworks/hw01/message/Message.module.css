@@ -1,5 +1,5 @@
 .message {
-    margin-top: 40px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -11,7 +11,7 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
-    min-width: 400px;
+    
 }
 
 .imageAndText img {
@@ -19,7 +19,7 @@
 }
 
 .text {
-    padding: 5px 25px 0 0;
+    padding: 5px 25px 0 13px;
     color: white;
     width: 100%;
     min-height: 60px;

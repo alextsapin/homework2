@@ -1,25 +1,46 @@
 .button {
+    width: 132px;
+    height: 30px;
+    padding: 5px 24px 5px 24px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
 }
 
 .disabled {
+    background: #80A6CC !important;
+    cursor: not-allowed;
 }
 
 .secondary {
+    background: transparent;
+    border: 1px solid rgba(0, 102, 204, 1);
+    color: rgba(0, 102, 204, 1);
+    font-weight: 600;
 }
 
 .default {
+    background: #0066CC;
 }
 
 .red {
+    background: rgba(204, 20, 57, 1);
 }
 
 .default:hover {
+    background: #007FFF;
 }
 
 .red:hover {
+    background: #FF1947;
 }
 
 .secondary:hover {
+    background: #E5F0FA;
 }
 
 

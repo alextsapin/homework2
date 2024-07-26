@@ -19,14 +19,6 @@
     border-radius: 5px;
     padding: 0px 0 0 12px;
     font-size: 16px;
-    outline: none !important;
-    outline: 0 !important;
-    box-shadow: none;
-}
-
-.input:active, .input:focus, .input:focus-visible {
-    outline: none !important;
-    outline: 0 !important;
     box-shadow: none;
 }
 

@@ -7,10 +7,12 @@ const MessageSender = (props: any) => {
     const M = props.M
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const [messages, setMessages] = useState<any[]>([])
-    const [text, setText] = useState<any>('')
+    const [text, setText] = useState<any>('some text')
 
     const onChange = (e: any) => {
-        setText(e.currentTarget.value)
+        if(e.currentTarget.value.trum()) {
+            setText(e.currentTarget.value)
+        }
     }
 
     useEffect(() => {
@@ -32,7 +34,7 @@ const MessageSender = (props: any) => {
                 },
             },
         ])
-        setTimeout(() => setText(''), 4)
+        setTimeout(() => setText(text), 4)
     }
 
     const onKeyDown = (e: any) => {
@@ -56,7 +58,7 @@ const MessageSender = (props: any) => {
                     placeholder={'Type your message'}
                     value={text}
 
-                    onChange={onChange}
+                    onChange={e => onChange}
                     onKeyDown={onKeyDown}
                 />
                 <button

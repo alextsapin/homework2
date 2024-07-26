@@ -17,8 +17,7 @@
 }
 
 .friendText {
-    min-width: 400px;
-    padding: 7px 0 0 27px;
+    padding: 7px 13px 0 27px;
     color: black;
     min-height: 60px;
     display: flex;
