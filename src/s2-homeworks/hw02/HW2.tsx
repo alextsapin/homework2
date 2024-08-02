@@ -58,7 +58,7 @@ function HW2() {
     }
 
     return (
-        <div id={'hw2'} className="mt-5">
+        <div id={'hw2'} className="container">
             <div className={s2.hwTitle}>Homework #2</div>
             <div className={s2.hw}>
                 <Affairs

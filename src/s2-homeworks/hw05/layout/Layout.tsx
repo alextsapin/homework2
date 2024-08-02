@@ -11,9 +11,11 @@ export const Layout: FC<PropsType> = ({ children }) => {
     const handleClose = () => setOpen(false)
     const handleOpen = () => setOpen(true)
 
+    // position: sticky;
+
     useEffect(() => {
-        open && (document.body.style.overflow = 'hidden')
-        !open && (document.body.style.overflow = 'unset')
+        open && (document.body.style.overflow = 'hidden') && (document.body.style.paddingRight = '17px')
+        !open && (document.body.style.overflow = 'unset') && (document.body.style.paddingRight = '0')
     }, [open]) // отключает прокрутку при открытом меню
 
     return (

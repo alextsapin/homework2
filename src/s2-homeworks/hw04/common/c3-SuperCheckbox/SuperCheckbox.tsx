@@ -31,8 +31,6 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         onChangeChecked && onChangeChecked(e.target.checked)
     }
 
-    console.log(restProps);
-
     const finalInputClassName = s.checkbox
         + (className ? ' ' + className : '')
 
