@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react'
 import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import { restoreState, saveState } from './localStorage/localStorage'
@@ -12,18 +13,20 @@ import s from './HW6.module.css'
  */
 
 const HW6 = () => {
-    const [value, setValue] = useState<string>('')
+    const [value, setValue] = useState('')
 
     const save = () => {
-        saveState<string>('hw6-editable-span-value', value)
+        if(value) {
+            saveState<string>('hw6-editable-span-value', value)
+        }
     }
     const restore = () => {
-        // делают студенты
+        setValue(restoreState<string>('hw6-editable-span-value', value))
 
     }
 
     return (
-        <div id={'hw6'}>
+        <div id={'hw6'} className="container">
             <div className={s2.hwTitle}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
@@ -48,6 +51,7 @@ const HW6 = () => {
                         id={'hw6-restore'}
                         onClick={restore}
                         xType={'secondary'}
+                        className="ms-3"
                     >
                         Get from ls
                     </SuperButton>
