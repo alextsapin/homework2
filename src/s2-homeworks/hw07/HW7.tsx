@@ -46,6 +46,7 @@ const HW7 = () => {
                     </div>
                 </div>
             </div>
+            <hr/>
         </div>
     )
 }

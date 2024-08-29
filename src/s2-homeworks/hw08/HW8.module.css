@@ -8,12 +8,19 @@
 }
 
 .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 18px;
 }
 
 .container {
+    width: 100%;
+    max-width: 600px;
 }
 
 .thead {
+    font-weight: bold;
 }
 
 .nameCol {
