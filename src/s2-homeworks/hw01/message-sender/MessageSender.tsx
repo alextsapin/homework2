@@ -7,14 +7,12 @@ const MessageSender = (props: any) => {
     const M = props.M
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const [messages, setMessages] = useState<any[]>([])
-    const [text, setText] = useState<any>('some text')
+    const [text, setText] = useState<any>('')
 
     const onChange = (e: any) => {
-        if(e.currentTarget.value.trum()) {
-            setText(e.currentTarget.value)
-        }
+        setText(e.currentTarget.value)
     }
-
+    
     useEffect(() => {
         if (textareaRef?.current) {
             textareaRef.current.style.height = '0px'
@@ -34,11 +32,14 @@ const MessageSender = (props: any) => {
                 },
             },
         ])
-        setTimeout(() => setText(text), 4)
+        // setTimeout(() => setText(text), 4)
+        setText('')
     }
 
     const onKeyDown = (e: any) => {
-        e.key === 'Enter' && e.shiftKey && addMessage()
+        if(text) {
+            e.key === 'Enter' && e.shiftKey && addMessage()
+        }
     }
 
     return (
@@ -58,14 +59,14 @@ const MessageSender = (props: any) => {
                     placeholder={'Type your message'}
                     value={text}
 
-                    onChange={e => onChange}
+                    onChange={(e) => onChange(e)}
                     onKeyDown={onKeyDown}
                 />
                 <button
                     id={'hw1-button'}
                     className={s.button}
-
                     onClick={addMessage}
+                    disabled={!text}
                 >
                     {/*текст кнопки могут изменить студенты*/}
                     Send
