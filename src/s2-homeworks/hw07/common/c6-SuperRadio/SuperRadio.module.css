@@ -1,14 +1,27 @@
 .radio {
+    visibility: hidden;
+    position: relative;
 }
 
 .radio::before {
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    top:0;
+    left: -15px;
+    visibility: visible;
+    height: 20px;
+    width: 20px;
+    background-image: url('https://i.ibb.co/9p9ZRnt/checkOff.png');
 }
 
-
 .radio:checked::before {
+    background-image: url('https://i.ibb.co/wMP1V9b/checkOn.png');
 }
 
 .label {
+    margin-bottom: 22px;
+    cursor: pointer;
 }
 
 .options {

@@ -44,6 +44,7 @@ const HW10 = () => {
                     </SuperButton>
                 )}
             </div>
+            <hr/>
         </div>
     )
 }
