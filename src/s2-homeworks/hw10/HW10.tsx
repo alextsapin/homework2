@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {AppStoreType} from './bll/store'
 import {loadingAC} from './bll/loadingReducer'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
+import s from './Loader.module.css';
 import s2 from '../../s1-main/App.module.css'
 import {Loader} from './Loader'
 
@@ -30,7 +31,7 @@ const HW10 = () => {
         <div id={'hw10'} className="container">
             <div className={s2.hwTitle}>Homework #10</div>
 
-            <div className={s2.hw}>
+            <div className={s2.hw + ' ' + s.wrapper}>
                 {isLoading ? (
                     <div id={'hw10-loading'}>
                         <Loader/>

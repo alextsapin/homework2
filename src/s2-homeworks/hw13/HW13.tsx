@@ -46,7 +46,7 @@ const HW13 = () => {
     }
 
     return (
-        <div id={'hw13'}>
+        <div id={'hw13'} className="container">
             <div className={s2.hwTitle}>Homework #13</div>
 
             <div className={s2.hw}>
@@ -107,6 +107,7 @@ const HW13 = () => {
                     </div>
                 </div>
             </div>
+            <hr/>
         </div>
     )
 }

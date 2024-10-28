@@ -17,6 +17,7 @@ const HW4 = () => {
             <div className={s2.hw}>
                 <Stand />
             </div>
+            <hr/>
         </div>
     )
 }
