@@ -1,7 +1,8 @@
 .button {
-    width: 132px;
+    min-width: 132px;
     height: 30px;
     border-radius: 3px;
+    padding: 0 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
