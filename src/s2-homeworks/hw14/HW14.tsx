@@ -65,7 +65,7 @@ const HW14 = () => {
     ))
 
     return (
-        <div id={'hw14'}>
+        <div id={'hw14'} className="container">
             <div className={s2.hwTitle}>Homework #14</div>
 
             <div className={s2.hw}>
@@ -82,6 +82,7 @@ const HW14 = () => {
 
                 {mappedTechs}
             </div>
+            <hr/>
         </div>
     )
 }
