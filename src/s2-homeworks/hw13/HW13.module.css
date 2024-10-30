@@ -23,7 +23,8 @@
     width: auto;
 }
 
-.textContainer{
+.textContainer {
+    margin-left: 100px;
 }
 
 .code {
@@ -31,6 +32,7 @@
     font-weight: 500;
     line-height: 36.57px;
     text-align: left;
+    margin-bottom: 12px;
 }
 
 .text, .info {
