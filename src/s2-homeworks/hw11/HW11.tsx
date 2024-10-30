@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { styled } from '@mui/material/styles';
 import s from './HW11.module.css'
 import s2 from '../../s1-main/App.module.css'
 import { restoreState } from '../hw06/localStorage/localStorage'
@@ -9,6 +10,44 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 * 2 - дописать типы и логику функции change
 * 3 - сделать стили в соответствии с дизайном
 * */
+
+const CustomSlider = styled(SuperRange)({
+    margin: '0 15px',
+    color: '#8B8B8B',
+    height: 4,
+    width: 160,
+    padding: '13px 0',
+    position: 'relative',
+    left: -5,
+    '& .MuiSlider-thumb': {
+        height: 18,
+        width: 18,
+        background: 'white',
+        border: '1px solid #00CC22',
+        '&:after': {
+            display: 'block',
+            height: 6,
+        },
+        '&:hover': {
+            boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+        },
+        '& .airbnb-bar': {
+            height: 9,
+            width: 1,
+            backgroundColor: 'currentColor',
+            marginLeft: 1,
+            marginRight: 1,
+        },
+    },
+    '& .MuiSlider-track': {
+        height: 3,
+    },
+    '& .MuiSlider-rail': {
+        color: '#00CC22',
+        opacity: 1,
+        height: 3,
+    },
+});
 
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
@@ -33,20 +72,18 @@ function HW11() {
                 <div className={s.container}>
                     <div className={s.wrapper}>
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
-                        <SuperRange
+                        <CustomSlider
                             id={'hw11-single-slider'}
                             value={value1}
                             onChange={change}
-
                         />
                     </div>
                     <div className={s.wrapper}>
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
-                        <SuperRange
+                        <CustomSlider
                             id={'hw11-double-slider'}
                             value={[value1, value2]}
                             onChange={change}
-
                         />
                         <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
