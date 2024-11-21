@@ -41,7 +41,6 @@ const HW13 = () => {
                 // дописать
             })
             .catch((e:AxiosError) => {
-                console.log(e.response?.status)
                 switch(e.response?.status) {
                     case 400: {
                         setCode('Ошибка 400!')
