@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW15.module.css'
@@ -51,21 +52,31 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-
+                // делает студент 
+                // console.log(res?.data)
+                const techs = res?.data.techs
+                const totalCount = res?.data.totalCount
+    
                 // сохранить пришедшие данные
-
-                //
+                if(techs) {
+                    setTechs(techs)
+                }
+    
+                if(totalCount) {
+                    setTotalCount(totalCount)
+                }
+            })
+            .finally(function () {
+                setLoading(false)
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
+        setPage(newPage)
+        setCount(newCount)
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
+        sendQuery({page: newPage})
         // setSearchParams(
 
         //
@@ -103,35 +114,40 @@ const HW15 = () => {
     ))
 
     return (
-        <div id={'hw15'}>
+        <div id={'hw15'} className="container">
             <div className={s2.hwTitle}>Homework #15</div>
+            <div className="row">
+                {idLoading 
+                ? <div id={'hw15-loading'} className={s.loading}>Loading...</div>
+                : <div className="col-xl-6">
+                    <SuperPagination
+                        page={page}
+                        itemsCountForPage={count}
+                        totalCount={totalCount}
+                        onChange={onChangePagination}
+                    />
+                    <table className="table">
+                        <thead className="table-light">
+                            <tr>
+                                <td className={s.techHeader}>
+                                    tech
+                                    <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                                </td>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
-
-                <SuperPagination
-                    page={page}
-                    itemsCountForPage={count}
-                    totalCount={totalCount}
-                    onChange={onChangePagination}
-                />
-
-                <div className={s.rowHeader}>
-                    <div className={s.techHeader}>
-                        tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
-                    </div>
-
-                    <div className={s.developerHeader}>
-                        developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
-                    </div>
+                                <td className={s.developerHeader}>
+                                    developer
+                                    <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                                </td>
+                            </tr>
+                        </thead>
+                        {mappedTechs}
+                    </table>
                 </div>
-
-                {mappedTechs}
+                }
             </div>
         </div>
     )
 }
+
 
 export default HW15
