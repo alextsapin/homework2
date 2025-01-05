@@ -6,6 +6,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import spinner from './images/spinner.svg'
 
 /*
 * 1 - дописать SuperPagination
@@ -85,10 +86,12 @@ const HW15 = () => {
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
 
-        // sendQuery(
+        // при сортировке сбрасывать на 1 страницу
+        setPage(1)
+
+        sendQuery({sort: newSort})
         // setSearchParams(
 
         //
@@ -102,15 +105,15 @@ const HW15 = () => {
     }, [])
 
     const mappedTechs = techs.map(t => (
-        <div key={t.id} className={s.row}>
-            <div id={'hw15-tech-' + t.id} className={s.tech}>
+        <tr key={t.id} className={s.row}>
+            <td id={'hw15-tech-' + t.id} className={s.tech}>
                 {t.tech}
-            </div>
+            </td>
 
-            <div id={'hw15-developer-' + t.id} className={s.developer}>
+            <td id={'hw15-developer-' + t.id} className={s.developer}>
                 {t.developer}
-            </div>
-        </div>
+            </td>
+        </tr>
     ))
 
     return (
@@ -118,7 +121,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
             <div className="row">
                 {idLoading 
-                ? <div id={'hw15-loading'} className={s.loading}>Loading...</div>
+                ? <div id={'hw15-loading'} className={s.loading}><img src={spinner} alt="spinner"/></div>
                 : <div className="col-xl-6">
                     <SuperPagination
                         page={page}
@@ -126,7 +129,7 @@ const HW15 = () => {
                         totalCount={totalCount}
                         onChange={onChangePagination}
                     />
-                    <table className="table">
+                    <table className="table mt-4">
                         <thead className="table-light">
                             <tr>
                                 <td className={s.techHeader}>
@@ -140,7 +143,7 @@ const HW15 = () => {
                                 </td>
                             </tr>
                         </thead>
-                        {mappedTechs}
+                        <tbody>{mappedTechs}</tbody>
                     </table>
                 </div>
                 }
