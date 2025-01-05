@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/homework2/static/css/main.81f03d2b.css",
-    "main.js": "/homework2/static/js/main.f7e06f3c.js",
+    "main.css": "/homework2/static/css/main.cd5e8b7e.css",
+    "main.js": "/homework2/static/js/main.7cd6db45.js",
     "static/js/787.66cb4309.chunk.js": "/homework2/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/homework2/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/200.svg": "/homework2/static/media/200.2b4de1542921864a6ecb8c3301ea4670.svg",
@@ -10,18 +10,19 @@
     "static/media/400.svg": "/homework2/static/media/400.4e46e304dcfdcae89fcfb902d8863816.svg",
     "static/media/404.svg": "/homework2/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
     "static/media/closeOutline.svg": "/homework2/static/media/closeOutline.91a6693133923612a0702421ab3e9923.svg",
+    "static/media/spinner.svg": "/homework2/static/media/spinner.9d9d3ae62490f373f6895dd16413ae2e.svg",
     "static/media/editIcon.svg": "/homework2/static/media/editIcon.11c8e1c42f9a4eae81897d68e091eb42.svg",
     "static/media/checked.svg": "/homework2/static/media/checked.0b6a1bcf5d417ff0a947.svg",
     "index.html": "/homework2/index.html",
     "static/media/burger.svg": "/homework2/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
     "static/media/down.svg": "/homework2/static/media/down.84608c11f30550bbfe9dc58dff6d4ddb.svg",
     "static/media/up.svg": "/homework2/static/media/up.3f53e1ada336d4a2b89dabfb878c65f9.svg",
-    "main.81f03d2b.css.map": "/homework2/static/css/main.81f03d2b.css.map",
-    "main.f7e06f3c.js.map": "/homework2/static/js/main.f7e06f3c.js.map",
+    "main.cd5e8b7e.css.map": "/homework2/static/css/main.cd5e8b7e.css.map",
+    "main.7cd6db45.js.map": "/homework2/static/js/main.7cd6db45.js.map",
     "787.66cb4309.chunk.js.map": "/homework2/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81f03d2b.css",
-    "static/js/main.f7e06f3c.js"
+    "static/css/main.cd5e8b7e.css",
+    "static/js/main.7cd6db45.js"
   ]
 }
