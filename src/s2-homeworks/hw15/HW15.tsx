@@ -6,7 +6,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
-import spinner from './images/spinner.svg'
+import spinner from './images/loading.png'
 
 /*
 * 1 - дописать SuperPagination
@@ -81,15 +81,11 @@ const HW15 = () => {
         // setSearchParams()
     }
 
-    const onChangeSort = (newSort: string) => {
-        // Делает студент
-        setSort(newSort)
-
-        // при сортировке сбрасывать на 1 страницу
+    const onChangeSort = (sort: string) => {
+        setSort(sort)
         setPage(1)
-
-        sendQuery({sort: newSort})
-        // setSearchParams()
+        sendQuery({sort: sort, page: page, count: count});
+        setSearchParams({sort: sort, page: page.toString(), count: count.toString()})
     }
 
     useEffect(() => {
@@ -116,7 +112,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
             <div className="row">
                 {idLoading 
-                ? <div id={'hw15-loading'} className={s.loading}><img src={spinner} alt="spinner"/></div>
+                ? <div id={'hw15-loading'}><img className={s.loading} src={spinner} alt="spinner"/></div>
                 : <div className="col-xl-6">
                     <SuperPagination
                         page={page}
@@ -129,12 +125,12 @@ const HW15 = () => {
                             <tr>
                                 <td className={s.techHeader}>
                                     tech
-                                    <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                                    <SuperSort sort={sort} value='tech' onChange={onChangeSort}/>
                                 </td>
 
                                 <td className={s.developerHeader}>
                                     developer
-                                    <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                                    <SuperSort sort={sort} value='developer' onChange={onChangeSort}/>
                                 </td>
                             </tr>
                         </thead>
