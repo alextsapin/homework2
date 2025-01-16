@@ -52,20 +52,10 @@ const HW15 = () => {
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
-            .then((res) => {
+            .then((res: any) => {
                 // делает студент 
-                // console.log(res?.data)
-                const techs = res?.data.techs
-                const totalCount = res?.data.totalCount
-    
-                // сохранить пришедшие данные
-                if(techs) {
-                    setTechs(techs)
-                }
-    
-                if(totalCount) {
-                    setTotalCount(totalCount)
-                }
+                setTechs(res.data.techs)
+                setTotalCount(res.data.totalCount)   
             })
             .finally(function () {
                 setLoading(false)
@@ -73,19 +63,17 @@ const HW15 = () => {
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
         setPage(newPage)
         setCount(newCount)
-
-        sendQuery({page: newPage, count: newCount})
-        // setSearchParams()
+        sendQuery({page: newPage, count: newCount});
+        setSearchParams({page: newPage.toString(), count: newCount.toString()})
     }
 
-    const onChangeSort = (sort: string) => {
-        setSort(sort)
+    const onChangeSort = (newSort: string) => {
         setPage(1)
-        sendQuery({sort: sort, page: page, count: count});
-        setSearchParams({sort: sort, page: page.toString(), count: count.toString()})
+        setSort(newSort)
+        sendQuery({sort: newSort, page: page});
+        setSearchParams({sort: newSort, page: page.toString(), count: count.toString()})
     }
 
     useEffect(() => {
@@ -113,7 +101,7 @@ const HW15 = () => {
             <div className="row">
                 {idLoading 
                 ? <div id={'hw15-loading'}><img className={s.loading} src={spinner} alt="spinner"/></div>
-                : <div className="col-xl-6">
+                : <div className="col-xl-7">
                     <SuperPagination
                         page={page}
                         itemsCountForPage={count}
@@ -123,15 +111,8 @@ const HW15 = () => {
                     <table className="table mt-4">
                         <thead className="table-light">
                             <tr>
-                                <td className={s.techHeader}>
-                                    tech
-                                    <SuperSort sort={sort} value='tech' onChange={onChangeSort}/>
-                                </td>
-
-                                <td className={s.developerHeader}>
-                                    developer
-                                    <SuperSort sort={sort} value='developer' onChange={onChangeSort}/>
-                                </td>
+                                <SuperSort title='Tech' sort={sort} value='tech' onChange={onChangeSort}/>
+                                <SuperSort title='Developer' sort={sort} value='developer' onChange={onChangeSort}/>
                             </tr>
                         </thead>
                         <tbody>{mappedTechs}</tbody>
@@ -142,6 +123,5 @@ const HW15 = () => {
         </div>
     )
 }
-
 
 export default HW15

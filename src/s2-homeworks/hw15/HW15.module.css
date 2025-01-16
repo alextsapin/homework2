@@ -6,12 +6,9 @@
 
 }
 
-.techHeader {
-
-}
-
-.developerHeader {
-
+.header {
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .row {
