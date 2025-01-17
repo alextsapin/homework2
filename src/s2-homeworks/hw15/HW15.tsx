@@ -65,15 +65,23 @@ const HW15 = () => {
     const onChangePagination = (newPage: number, newCount: number) => {
         setPage(newPage)
         setCount(newCount)
-        sendQuery({page: newPage, count: newCount});
-        setSearchParams({page: newPage.toString(), count: newCount.toString()})
+        sendQuery({sort: sort, page: newPage, count: newCount});
+        setSearchParams({sort: sort, page: newPage.toString(), count: newCount.toString()})
     }
 
     const onChangeSort = (newSort: string) => {
         setPage(1)
         setSort(newSort)
-        sendQuery({sort: newSort, page: page});
+        sendQuery({sort: newSort, page: page, count: count});
         setSearchParams({sort: newSort, page: page.toString(), count: count.toString()})
+    }
+
+    const reset = () => {
+        setPage(1)
+        setSort('')
+        setCount(4)
+        sendQuery({sort: '', page: 1, count: 4});
+        setSearchParams({sort: '', page: (1).toString(), count: (4).toString()})
     }
 
     useEffect(() => {
@@ -98,7 +106,7 @@ const HW15 = () => {
     return (
         <div id={'hw15'} className="container">
             <div className={s2.hwTitle}>Homework #15</div>
-            <div className="row">
+            <div className={s.wrapper + ' row'}>
                 {idLoading 
                 ? <div id={'hw15-loading'}><img className={s.loading} src={spinner} alt="spinner"/></div>
                 : <div className="col-xl-7">
@@ -117,9 +125,11 @@ const HW15 = () => {
                         </thead>
                         <tbody>{mappedTechs}</tbody>
                     </table>
+                    <button className='btn btn-danger mt-3' onClick={reset}>RESET</button>
                 </div>
                 }
             </div>
+            <hr/>
         </div>
     )
 }
